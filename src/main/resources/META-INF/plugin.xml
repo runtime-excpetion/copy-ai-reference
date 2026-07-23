@@ -10,10 +10,18 @@
 
     <depends>com.intellij.modules.platform</depends>
 
-    <resource-bundle>messages.MyBundle</resource-bundle>
-
-    <extensions defaultExtensionNs="com.intellij">
-        <toolWindow factoryClass="com.github.runtimeexcpetion.copyaireference.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>
-        <postStartupActivity implementation="com.github.runtimeexcpetion.copyaireference.startup.MyProjectActivity" />
-    </extensions>
+    <actions>
+        <action id="CopyAiReference.File"
+                class="com.github.runtimeexcpetion.copyaireference.actions.CopyAiReferenceAction"
+                text="copyAiReference"
+                description="Copy relative path to AI reference format">
+            <add-to-group group-id="ProjectViewPopupMenu" anchor="last"/>
+        </action>
+        <action id="CopyAiReference.Editor"
+                class="com.github.runtimeexcpetion.copyaireference.actions.CopyAiReferenceAction"
+                text="copyAiReference"
+                description="Copy relative path and line numbers to AI reference format">
+            <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+        </action>
+    </actions>
 </idea-plugin>
