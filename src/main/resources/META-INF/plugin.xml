@@ -4,9 +4,14 @@
     <name>copy-ai-reference</name>
     <vendor>runtime-excpetion</vendor>
     <description><![CDATA[
-        <p><b>copy-ai-reference</b> is a repository that provides a pure template to make it easier to create a new plugin project.</p>
-        <p>The main goal of this template is to speed up the setup phase of plugin development for both new and experienced developers by preconfiguring the project scaffold and CI, linking to the proper documentation pages, and keeping everything organized.</p>
-    ]]></description>
+        <p><b>Copy Ai Reference</b> 插件是一个用于复制代码引用的 idea 插件，旨在方便的复制代码引用（@路径#L行号-行尾号）给其他的AI CLI 或助手，提供的功能为:</p>
+        <p>1.用户在选择一个文件，右键选择Copy Ai Reference，插件复制@文件在代码中库的路径，例如：@src/main/kotlin/com/github/runtimeexcpetion/copyaireference/startup/MyProjectActivity.kt</p>
+        <p>2.用户在代码文件中选择多行代码，右键点击，出现弹出框，其中弹出框有一个选项，叫做 copyAiReference，插件会将选中的代码复制到剪贴板，格式为@选中的代码路径#L行号-行尾号，例如：@src/main/kotlin/com/github/runtimeexcpetion/copyaireference/startup/MyProjectActivity.kt#L10-15</p>
+        <p></p>
+        <p>The <b>Copy Ai Reference</b> plugin is an IntelliJ IDEA plugin designed to facilitate copying code references (in the format `@path#LstartLine-endLine`) for use with AI CLI tools or assistants. It offers the following features:</p>
+        <p>1. When a user selects a file and chooses "Copy Ai Reference" from the right-click menu, the plugin copies the file's path relative to the codebase—for example: `@src/main/kotlin/com/github/runtimeexcpetion/copyaireference/startup/MyProjectActivity.kt`.</p>
+        <p>2. When a user selects multiple lines of code within a file and right-clicks, a context menu appears containing the "copyAiReference" option; selecting this copies the reference to the clipboard in the format `@path#LstartLine-endLine`—for example: `@src/main/kotlin/com/github/runtimeexcpetion/copyaireference/startup/MyProjectActivity.kt#L10-15`.</p>
+]]></description>
 
     <depends>com.intellij.modules.platform</depends>
 
