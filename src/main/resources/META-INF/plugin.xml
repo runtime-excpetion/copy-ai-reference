@@ -13,15 +13,15 @@
     <actions>
         <action id="CopyAiReference.File"
                 class="com.github.runtimeexcpetion.copyaireference.actions.CopyAiReferenceAction"
-                text="copyAiReference"
+                text="Copy AI Reference"
                 description="Copy relative path to AI reference format">
-            <add-to-group group-id="ProjectViewPopupMenu" anchor="last"/>
+            <add-to-group group-id="ProjectViewPopupMenu" anchor="first"/>
         </action>
         <action id="CopyAiReference.Editor"
                 class="com.github.runtimeexcpetion.copyaireference.actions.CopyAiReferenceAction"
-                text="copyAiReference"
+                text="Copy AI Reference"
                 description="Copy relative path and line numbers to AI reference format">
-            <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+            <add-to-group group-id="EditorPopupMenu" anchor="first"/>
         </action>
     </actions>
 </idea-plugin>

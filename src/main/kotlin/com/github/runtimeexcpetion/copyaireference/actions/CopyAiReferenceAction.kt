@@ -5,6 +5,7 @@ import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.openapi.actionSystem.CommonDataKeys
 import com.intellij.openapi.editor.Editor
+import com.intellij.openapi.fileEditor.FileDocumentManager
 import com.intellij.openapi.ide.CopyPasteManager
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.vfs.LocalFileSystem
@@ -31,8 +32,13 @@ class CopyAiReferenceAction : AnAction() {
 
     override fun actionPerformed(e: AnActionEvent) {
         val project = e.project ?: return
-        val file = e.getData(CommonDataKeys.VIRTUAL_FILE) ?: return
-        val result = buildReferenceString(project, file, e.getData(CommonDataKeys.EDITOR)) ?: return
+        val editor = e.getData(CommonDataKeys.EDITOR)
+
+        val file = e.getData(CommonDataKeys.VIRTUAL_FILE)
+            ?: editor?.let { FileDocumentManager.getInstance().getFile(it.document) }
+            ?: return
+
+        val result = buildReferenceString(project, file, editor) ?: return
         CopyPasteManager.getInstance().setContents(StringSelection(result))
     }
 
